@@ -500,6 +500,23 @@ function isReady(state) {
   return false
 }
 
+export function paintLivePrices(root, state) {
+  const range = currentRange(state)
+  const theaterText = state.theater.packageId ? money(theaterTotal(state.theater)) : '—'
+  root.querySelectorAll('.total-figure').forEach((el) => {
+    el.textContent = theaterText
+  })
+  root.querySelectorAll('.range-figure, .proposal-total').forEach((el) => {
+    if (range) el.textContent = range
+  })
+  const lines = lineSummary(state)
+  root.querySelectorAll('ul.lines').forEach((ul) => {
+    ul.innerHTML = lines
+      .map((item) => `<li><span>${escapeHtml(item.label)}</span><strong>${escapeHtml(item.value)}</strong></li>`)
+      .join('')
+  })
+}
+
 function currentRange(state) {
   if (state.route === 'cameras') return formatRange(cameraRange(state.cameras))
   if (state.route === 'theater') return money(theaterTotal(state.theater))

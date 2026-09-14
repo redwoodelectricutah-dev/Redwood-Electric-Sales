@@ -1,6 +1,6 @@
 import './style.css'
 import { loadState, saveState, parseLocation, routeFromPath, applyShareParams, shareUrl, writeHash } from './state.js'
-import { renderApp, renderLeadModal } from './views.js'
+import { renderApp, renderLeadModal, paintLivePrices } from './views.js'
 import { mailtoHref } from './mailto.js'
 
 const app = document.querySelector('#app')
@@ -222,21 +222,21 @@ function onInput(event) {
   const el = event.target
   const action = el.dataset.action
   if (action === 'override-theater-pkg') {
-    state.theater.overrides.pkg = Number(el.value) || 0
+    state.theater.overrides.pkg = el.value === '' ? 0 : Number(el.value)
     persist()
-    refreshTotals()
+    paintLivePrices(app, state)
     return
   }
   if (action === 'override-addon') {
-    state.theater.overrides[el.dataset.id] = Number(el.value) || 0
+    state.theater.overrides[el.dataset.id] = el.value === '' ? 0 : Number(el.value)
     persist()
-    refreshTotals()
+    paintLivePrices(app, state)
     return
   }
   if (action === 'override-quote') {
     state[el.dataset.field].quoteOverride = el.value
     persist()
-    refreshTotals()
+    paintLivePrices(app, state)
   }
 }
 
@@ -265,15 +265,6 @@ function onSubmit(event) {
   const href = mailtoHref({ ...leadForm, state })
   window.location.href = href
   openedEmail = true
-  render()
-}
-
-function refreshTotals() {
-  const live = document.querySelector('.total-figure, .range-figure')
-  if (!live) {
-    render()
-    return
-  }
   render()
 }
 
