@@ -4,13 +4,13 @@ First-pass, mobile-friendly estimator for **Redwood Electric** (Utah County elec
 
 This is a **rough draft**. Every dollar amount is an example placeholder, labeled as such. It is not a quote.
 
-**Phone / public draft:** https://redwoodelectricutah-dev.github.io/redwood-electric-sales/
+**Phone / public draft:** https://redwoodelectricutah-dev.github.io/Redwood-Electric-Sales/
 
-Repo: https://github.com/redwoodelectricutah-dev/redwood-electric-sales
+Repo: https://github.com/redwoodelectricutah-dev/Redwood-Electric-Sales
 
 ## Enable GitHub Pages (if the live link 404s)
 
-This Vite app builds to `dist/` with base path `/redwood-electric-sales/`. A `gh-pages` branch holds that build. GitHub Actions on `main` can also deploy Pages.
+This Vite app builds to `dist/` with base path `/Redwood-Electric-Sales/`. A `gh-pages` branch holds that build. GitHub Actions on `main` can also deploy Pages.
 
 1. Open **Settings → Pages**
 2. **Source:** Deploy from a branch
