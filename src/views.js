@@ -18,6 +18,8 @@ import {
   theaterTotal,
 } from './catalog.js'
 
+const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`
+
 export function renderApp(state) {
   return `
     ${renderHeader(state)}
@@ -35,7 +37,9 @@ function renderHeader(state) {
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#/home" data-action="go-home">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-mark" aria-hidden="true">
+            <img class="brand-logo" src="${LOGO_SRC}" alt="" width="1280" height="1024" />
+          </span>
           <span class="brand-text">
             <span class="brand-name">Redwood Electric</span>
             <span class="brand-sub">Utah County · electrical &amp; low-voltage</span>
