@@ -146,21 +146,30 @@ h2 {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: inherit;
   text-decoration: none;
   min-width: 0;
 }
 
 .brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  background:
-    linear-gradient(160deg, transparent 40%, #e8dcc8 40% 46%, transparent 46%),
-    linear-gradient(180deg, #c45c2a 0%, #9a431c 100%);
-  clip-path: polygon(50% 8%, 78% 48%, 64% 48%, 86% 92%, 14% 92%, 36% 48%, 22% 48%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
   flex-shrink: 0;
+  background: #fff;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 49.6% 49.4%;
+  transform: scale(2.2);
+  transform-origin: center;
 }
 
 .brand-text {

@@ -84,4 +84,4 @@ Static files land in `dist/`. Deploy that folder to any static host (Netlify, Cl
 
 ## Brand
 
-Forest header `#1a2e24`, copper `#c45c2a`, warm paper backgrounds. Persistent **ROUGH DRAFT** banner. Safe-area padding for notched phones.
+Forest header `#1a2e24`, copper `#c45c2a`, warm paper backgrounds. Header uses the official lockup from [`public/logo.png`](public/logo.png) (Drive original; PNG bytes despite a `.jpg` title). Persistent **ROUGH DRAFT** banner. Safe-area padding for notched phones.
